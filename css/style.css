@@ -486,10 +486,13 @@ h1, h2, h3 { font-weight: 400; margin: 0; }
   margin-bottom: clamp(1.2rem, 2.6vw, 2.2rem);
 }
 
+/* contain, not cover — these are pattern charts, and cropping one throws away
+   the part of the design being referenced. The plate absorbs the leftover space. */
 .board img {
   width: 100%;
   aspect-ratio: 3 / 4;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--paper-deep);
   display: block;
 }
 
