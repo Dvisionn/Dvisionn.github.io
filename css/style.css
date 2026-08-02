@@ -407,10 +407,26 @@ h1, h2, h3 { font-weight: 400; margin: 0; }
 }
 
 /* long-form caption — a process note under a board, not a one-line label */
-.fig figcaption.note { max-width: 64ch; line-height: 1.62; }
-.fig figcaption.note p { margin-bottom: .85em; }
+.fig figcaption.note {
+  max-width: none;
+  color: var(--ink-soft);
+  line-height: 1.62;
+  margin-top: 1.4rem;
+  columns: 3;
+  column-gap: clamp(1.6rem, 3vw, 2.8rem);
+}
+
+/* keep each stage whole — a heading orphaned at a column foot reads as a break in the argument */
+.fig figcaption.note p {
+  break-inside: avoid;
+  margin-bottom: .95em;
+}
+
 .fig figcaption.note p:last-child { margin-bottom: 0; }
-.fig figcaption.note strong { color: var(--ink-soft); font-weight: 500; }
+.fig figcaption.note strong { color: var(--ink); font-weight: 500; }
+
+@media (max-width: 860px) { .fig figcaption.note { columns: 2; } }
+@media (max-width: 560px) { .fig figcaption.note { columns: 1; } }
 
 .fig--bleed { margin-inline: calc(var(--gut) * -1); }
 .fig--bleed figcaption { padding-inline: var(--gut); }
