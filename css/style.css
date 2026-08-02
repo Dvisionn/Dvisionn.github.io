@@ -406,6 +406,12 @@ h1, h2, h3 { font-weight: 400; margin: 0; }
   max-width: 44ch;
 }
 
+/* long-form caption — a process note under a board, not a one-line label */
+.fig figcaption.note { max-width: 64ch; line-height: 1.62; }
+.fig figcaption.note p { margin-bottom: .85em; }
+.fig figcaption.note p:last-child { margin-bottom: 0; }
+.fig figcaption.note strong { color: var(--ink-soft); font-weight: 500; }
+
 .fig--bleed { margin-inline: calc(var(--gut) * -1); }
 .fig--bleed figcaption { padding-inline: var(--gut); }
 
