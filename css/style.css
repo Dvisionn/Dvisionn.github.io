@@ -466,14 +466,25 @@ h1, h2, h3 { font-weight: 400; margin: 0; }
 
 /* icon grid */
 
+/* 160px floor, not 120 — the captions need room to sit on one line */
 .icons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: clamp(.7rem, 1.6vw, 1.2rem);
   margin-bottom: clamp(1.2rem, 2.6vw, 2.2rem);
 }
 
-.icons img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.icons figure { margin: 0; }
+.icons img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+
+.icons figcaption {
+  margin-top: .65rem;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: center;
+}
 
 /* board — reference images pinned up as tiles.
    Fixed max track, not 1fr, so a short row still reads as tiles rather than
