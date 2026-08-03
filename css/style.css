@@ -428,6 +428,11 @@ h1, h2, h3 { font-weight: 400; margin: 0; }
 @media (max-width: 860px) { .fig figcaption.note { columns: 2; } }
 @media (max-width: 560px) { .fig figcaption.note { columns: 1; } }
 
+/* reel — a phone-shot vertical clip. Left aligned and capped, because at full
+   column width a 9:16 video runs about 1500px tall and swallows the page. */
+.fig--reel { max-width: min(360px, 100%); }
+.fig--reel video { width: 100%; height: auto; display: block; }
+
 .fig--bleed { margin-inline: calc(var(--gut) * -1); }
 .fig--bleed figcaption { padding-inline: var(--gut); }
 
